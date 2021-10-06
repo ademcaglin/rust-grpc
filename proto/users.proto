@@ -1,0 +1,17 @@
+syntax = "proto3";
+package users;
+
+message UserIdInput {
+    int32 id = 1;
+}
+
+message UserDetailsResult {
+    int32 id = 1; 
+    string name = 2;
+    string email = 3;
+    bool deleted = 4;
+}
+
+service UserService {
+    rpc GetUser (UserIdInput) returns (UserDetailsResult);
+}
